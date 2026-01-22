@@ -18,30 +18,21 @@
 
 /**
  * @file
- *   Define TO Lab Application header file
+ *   TO_LAB Application Private Config Definitions
+ *
+ * This provides default values for configurable items that are internal
+ * to this module and do NOT affect the interface(s) of this module.  Changes
+ * to items in this file only affect the local module and will be transparent
+ * to external entities that are using the public interface(s).
+ *
+ * @note This file may be overridden/superceded by mission-provided definitions
+ * either by overriding this header or by generating definitions from a command/data
+ * dictionary tool.
  */
+#ifndef DEFAULT_TO_LAB_INTERNAL_CFG_VALUES_H
+#define DEFAULT_TO_LAB_INTERNAL_CFG_VALUES_H
 
-#ifndef TO_LAB_CMDS_H
-#define TO_LAB_CMDS_H
-
-#include "common_types.h"
-#include "cfe_error.h"
-#include "to_lab_msg.h"
-
-/******************************************************************************/
-
-/*
-** Prototypes Section
-*/
-CFE_Status_t TO_LAB_AddPacketCmd(const TO_LAB_AddPacketCmd_t *data);
-CFE_Status_t TO_LAB_NoopCmd(const TO_LAB_NoopCmd_t *data);
-CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data);
-CFE_Status_t TO_LAB_RemoveAllCmd(const TO_LAB_RemoveAllCmd_t *data);
-CFE_Status_t TO_LAB_RemovePacketCmd(const TO_LAB_RemovePacketCmd_t *data);
-CFE_Status_t TO_LAB_ResetCountersCmd(const TO_LAB_ResetCountersCmd_t *data);
-CFE_Status_t TO_LAB_SendDataTypesCmd(const TO_LAB_SendDataTypesCmd_t *data);
-CFE_Status_t TO_LAB_SendHkCmd(const TO_LAB_SendHkCmd_t *data);
-
-/******************************************************************************/
+/* Use the default configuration value for all */
+#define TO_LAB_PLATFORM_CFGVAL(x) DEFAULT_TO_LAB_PLATFORM_##x
 
 #endif

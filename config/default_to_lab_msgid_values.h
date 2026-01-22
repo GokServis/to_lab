@@ -18,30 +18,15 @@
 
 /**
  * @file
- *   Define TO Lab Application header file
+ *   TO_LAB Application Topic IDs
  */
+#ifndef DEFAULT_TO_LAB_MSGID_VALUES_H
+#define DEFAULT_TO_LAB_MSGID_VALUES_H
 
-#ifndef TO_LAB_CMDS_H
-#define TO_LAB_CMDS_H
+#include "cfe_core_api_base_msgids.h"
+#include "to_lab_topicids.h"
 
-#include "common_types.h"
-#include "cfe_error.h"
-#include "to_lab_msg.h"
-
-/******************************************************************************/
-
-/*
-** Prototypes Section
-*/
-CFE_Status_t TO_LAB_AddPacketCmd(const TO_LAB_AddPacketCmd_t *data);
-CFE_Status_t TO_LAB_NoopCmd(const TO_LAB_NoopCmd_t *data);
-CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data);
-CFE_Status_t TO_LAB_RemoveAllCmd(const TO_LAB_RemoveAllCmd_t *data);
-CFE_Status_t TO_LAB_RemovePacketCmd(const TO_LAB_RemovePacketCmd_t *data);
-CFE_Status_t TO_LAB_ResetCountersCmd(const TO_LAB_ResetCountersCmd_t *data);
-CFE_Status_t TO_LAB_SendDataTypesCmd(const TO_LAB_SendDataTypesCmd_t *data);
-CFE_Status_t TO_LAB_SendHkCmd(const TO_LAB_SendHkCmd_t *data);
-
-/******************************************************************************/
+#define TO_LAB_CMD_PLATFORM_MIDVAL(x) CFE_PLATFORM_CMD_TOPICID_TO_MIDV(CFE_MISSION_TO_LAB_##x##_TOPICID)
+#define TO_LAB_TLM_PLATFORM_MIDVAL(x) CFE_PLATFORM_TLM_TOPICID_TO_MIDV(CFE_MISSION_TO_LAB_##x##_TOPICID)
 
 #endif
