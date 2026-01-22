@@ -18,30 +18,23 @@
 
 /**
  * @file
- *   Define TO Lab Application header file
+ *   TO_LAB Application Topic IDs
  */
+#ifndef TO_LAB_TOPICIDS_H
+#define TO_LAB_TOPICIDS_H
 
-#ifndef TO_LAB_CMDS_H
-#define TO_LAB_CMDS_H
+#include "to_lab_topicid_values.h"
 
-#include "common_types.h"
-#include "cfe_error.h"
-#include "to_lab_msg.h"
+#define TO_LAB_MISSION_CMD_TOPICID         TO_LAB_MISSION_TIDVAL(CMD)
+#define DEFAULT_TO_LAB_MISSION_CMD_TOPICID 0x80
 
-/******************************************************************************/
+#define TO_LAB_MISSION_SEND_HK_TOPICID         TO_LAB_MISSION_TIDVAL(SEND_HK)
+#define DEFAULT_TO_LAB_MISSION_SEND_HK_TOPICID 0x81
 
-/*
-** Prototypes Section
-*/
-CFE_Status_t TO_LAB_AddPacketCmd(const TO_LAB_AddPacketCmd_t *data);
-CFE_Status_t TO_LAB_NoopCmd(const TO_LAB_NoopCmd_t *data);
-CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data);
-CFE_Status_t TO_LAB_RemoveAllCmd(const TO_LAB_RemoveAllCmd_t *data);
-CFE_Status_t TO_LAB_RemovePacketCmd(const TO_LAB_RemovePacketCmd_t *data);
-CFE_Status_t TO_LAB_ResetCountersCmd(const TO_LAB_ResetCountersCmd_t *data);
-CFE_Status_t TO_LAB_SendDataTypesCmd(const TO_LAB_SendDataTypesCmd_t *data);
-CFE_Status_t TO_LAB_SendHkCmd(const TO_LAB_SendHkCmd_t *data);
+#define TO_LAB_MISSION_HK_TLM_TOPICID         TO_LAB_MISSION_TIDVAL(HK_TLM)
+#define DEFAULT_TO_LAB_MISSION_HK_TLM_TOPICID 0x80
 
-/******************************************************************************/
+#define TO_LAB_MISSION_DATA_TYPES_TOPICID         TO_LAB_MISSION_TIDVAL(DATA_TYPES)
+#define DEFAULT_TO_LAB_MISSION_DATA_TYPES_TOPICID 0x81
 
 #endif

@@ -18,30 +18,29 @@
 
 /**
  * @file
- *   Define TO Lab Application header file
+ *   Specification for the TO_LAB command function codes
+ *
+ * @note
+ *   This file should be strictly limited to the command/function code (CC)
+ *   macro definitions.  Other definitions such as enums, typedefs, or other
+ *   macros should be placed in the msgdefs.h or msg.h files.
  */
+#ifndef TO_LAB_FCNCODES_H
+#define TO_LAB_FCNCODES_H
 
-#ifndef TO_LAB_CMDS_H
-#define TO_LAB_CMDS_H
-
-#include "common_types.h"
-#include "cfe_error.h"
-#include "to_lab_msg.h"
-
-/******************************************************************************/
+/************************************************************************
+ * Macro Definitions
+ ************************************************************************/
 
 /*
-** Prototypes Section
+** TO_LAB command codes
 */
-CFE_Status_t TO_LAB_AddPacketCmd(const TO_LAB_AddPacketCmd_t *data);
-CFE_Status_t TO_LAB_NoopCmd(const TO_LAB_NoopCmd_t *data);
-CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data);
-CFE_Status_t TO_LAB_RemoveAllCmd(const TO_LAB_RemoveAllCmd_t *data);
-CFE_Status_t TO_LAB_RemovePacketCmd(const TO_LAB_RemovePacketCmd_t *data);
-CFE_Status_t TO_LAB_ResetCountersCmd(const TO_LAB_ResetCountersCmd_t *data);
-CFE_Status_t TO_LAB_SendDataTypesCmd(const TO_LAB_SendDataTypesCmd_t *data);
-CFE_Status_t TO_LAB_SendHkCmd(const TO_LAB_SendHkCmd_t *data);
-
-/******************************************************************************/
+#define TO_LAB_NOOP_CC            0 /*  no-op command     */
+#define TO_LAB_RESET_STATUS_CC    1 /*  reset status      */
+#define TO_LAB_ADD_PKT_CC         2 /*  add packet        */
+#define TO_LAB_SEND_DATA_TYPES_CC 3 /*  send data types   */
+#define TO_LAB_REMOVE_PKT_CC      4 /*  remove packet     */
+#define TO_LAB_REMOVE_ALL_PKT_CC  5 /*  remove all packet */
+#define TO_LAB_OUTPUT_ENABLE_CC   6 /*  output enable     */
 
 #endif

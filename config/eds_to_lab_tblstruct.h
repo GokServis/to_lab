@@ -18,30 +18,11 @@
 
 /**
  * @file
- *   Define TO Lab Application header file
+ *   Specification for the TO_LAB table definitions.
  */
+#ifndef EDS_TO_LAB_TBLSTRUCT_H
+#define EDS_TO_LAB_TBLSTRUCT_H
 
-#ifndef TO_LAB_CMDS_H
-#define TO_LAB_CMDS_H
-
-#include "common_types.h"
-#include "cfe_error.h"
-#include "to_lab_msg.h"
-
-/******************************************************************************/
-
-/*
-** Prototypes Section
-*/
-CFE_Status_t TO_LAB_AddPacketCmd(const TO_LAB_AddPacketCmd_t *data);
-CFE_Status_t TO_LAB_NoopCmd(const TO_LAB_NoopCmd_t *data);
-CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data);
-CFE_Status_t TO_LAB_RemoveAllCmd(const TO_LAB_RemoveAllCmd_t *data);
-CFE_Status_t TO_LAB_RemovePacketCmd(const TO_LAB_RemovePacketCmd_t *data);
-CFE_Status_t TO_LAB_ResetCountersCmd(const TO_LAB_ResetCountersCmd_t *data);
-CFE_Status_t TO_LAB_SendDataTypesCmd(const TO_LAB_SendDataTypesCmd_t *data);
-CFE_Status_t TO_LAB_SendHkCmd(const TO_LAB_SendHkCmd_t *data);
-
-/******************************************************************************/
+#include "to_lab_eds_typedefs.h"
 
 #endif
