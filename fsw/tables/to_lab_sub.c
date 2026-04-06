@@ -37,6 +37,8 @@ TO_LAB_Subs_t Subscriptions = {
         {CFE_SB_MSGID_WRAP_VALUE(CFE_ES_HK_TLM_MID), {0, 0}, 4},
         /* Lab apps on this mission (see docs/AVAILABLE_TELEMETRY.md). */
         {CFE_SB_MSGID_WRAP_VALUE(TO_LAB_HK_TLM_MID), {0, 0}, 4},
+        /* EVS event messages (long format) for operator-friendly logs. */
+        {CFE_SB_MSGID_WRAP_VALUE(CFE_EVS_LONG_EVENT_MSG_MID), {0, 0}, 4},
 
         /* CFE_SB_MSGID_RESERVED entry to mark the end of valid MsgIds */
         {CFE_SB_MSGID_RESERVED, {0, 0}, 0}

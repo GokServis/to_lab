@@ -58,6 +58,31 @@ CFE_Status_t TO_LAB_EnableOutputCmd(const TO_LAB_EnableOutputCmd_t *data)
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                                                 */
+/* TO_LAB_DisableOutput() -- TLM output disabled                    */
+/*                                                                 */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+CFE_Status_t TO_LAB_DisableOutputCmd(const TO_LAB_DisableOutputCmd_t *data)
+{
+    (void)data;
+
+    if (TO_LAB_Global.downlink_on)
+    {
+        /* Best-effort close. The socket is opened lazily in TO_LAB_openTLM(). */
+        (void)OS_close(TO_LAB_Global.TLMsockid);
+    }
+
+    TO_LAB_Global.downlink_on      = false;
+    TO_LAB_Global.suppress_sendto  = false;
+    TO_LAB_Global.tlm_dest_IP[0]   = 0;
+
+    CFE_EVS_SendEvent(TO_LAB_TLMOUTENA_INF_EID, CFE_EVS_EventType_INFORMATION, "TO telemetry output disabled");
+
+    ++TO_LAB_Global.HkTlm.Payload.CommandCounter;
+    return CFE_SUCCESS;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                                                 */
 /* TO_LAB_Noop() -- Noop Handler                                   */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

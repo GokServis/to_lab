@@ -104,4 +104,9 @@ typedef struct
     TO_LAB_EnableOutput_Payload_t Payload;       /**< \brief Command payload */
 } TO_LAB_EnableOutputCmd_t;
 
+typedef struct
+{
+    CFE_MSG_CommandHeader_t CommandHeader; /**< \brief Command header */
+} TO_LAB_DisableOutputCmd_t;
+
 #endif /* TO_LAB_MSGSTRUCT_H */

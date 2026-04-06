@@ -42,5 +42,6 @@
 #define TO_LAB_REMOVE_PKT_CC      4 /*  remove packet     */
 #define TO_LAB_REMOVE_ALL_PKT_CC  5 /*  remove all packet */
 #define TO_LAB_OUTPUT_ENABLE_CC   6 /*  output enable     */
+#define TO_LAB_OUTPUT_DISABLE_CC  7 /*  output disable    */
 
 #endif
