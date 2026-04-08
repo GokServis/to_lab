@@ -31,6 +31,15 @@
 */
 #include "to_lab_msgids.h"
 
+/*
+ * CF End-of-Transaction telemetry MID.
+ *
+ * This mission uses the default cFE msgid mapping:
+ *   MID = 0x0800 | topicid
+ * and CF's default EOT topicid is 0xB3 (see `apps/cf/fsw/inc/cf_topicids.h`).
+ */
+#define BRIDGE_CF_EOT_TLM_MID 0x08B3u
+
 TO_LAB_Subs_t Subscriptions = {
     .Subs = {
         /* Ground / rust-cfs-bridge: ES HK is the primary parsed downlink product. */
@@ -39,6 +48,8 @@ TO_LAB_Subs_t Subscriptions = {
         {CFE_SB_MSGID_WRAP_VALUE(TO_LAB_HK_TLM_MID), {0, 0}, 4},
         /* EVS event messages (long format) for operator-friendly logs. */
         {CFE_SB_MSGID_WRAP_VALUE(CFE_EVS_LONG_EVENT_MSG_MID), {0, 0}, 4},
+        /* CF end-of-transaction telemetry for brain-upload gating. */
+        {CFE_SB_MSGID_WRAP_VALUE(BRIDGE_CF_EOT_TLM_MID), {0, 0}, 4},
 
         /* CFE_SB_MSGID_RESERVED entry to mark the end of valid MsgIds */
         {CFE_SB_MSGID_RESERVED, {0, 0}, 0}
